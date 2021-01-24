@@ -1,0 +1,137 @@
+[{
+  "_id": {
+    "$oid": "600a85ec46e1c2591076b72f"
+  },
+  "type": "book",
+  "src": "book1.jpg",
+  "price": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a860146e1c2591076b730"
+  },
+  "type": "book",
+  "src": "book2.jpg",
+  "price": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a861146e1c2591076b731"
+  },
+  "type": "book",
+  "src": "book3.jpg",
+  "price": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a862746e1c2591076b732"
+  },
+  "type": "book",
+  "src": "book4.jpg",
+  "price": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a864c46e1c2591076b733"
+  },
+  "type": "mug",
+  "src": "mug1.jpg",
+  "price": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a867046e1c2591076b734"
+  },
+  "type": "mug",
+  "src": "mug2.jpg",
+  "price": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a868046e1c2591076b735"
+  },
+  "type": "mug",
+  "src": "mug3.jpg",
+  "price": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a868b46e1c2591076b736"
+  },
+  "type": "mug",
+  "src": "mug4.jpg",
+  "price": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a86a146e1c2591076b737"
+  },
+  "type": "notebook",
+  "src": "notebook1.jpg",
+  "price": 7,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a86ac46e1c2591076b738"
+  },
+  "type": "notebook",
+  "src": "notebook2.jpg",
+  "price": 7,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a86b646e1c2591076b739"
+  },
+  "type": "notebook",
+  "src": "notebook3.jpg",
+  "price": 7,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a86c046e1c2591076b73a"
+  },
+  "type": "notebook",
+  "src": "notebook4.jpg",
+  "price": 7,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a87be46e1c2591076b73d"
+  },
+  "type": "book",
+  "src": "book5.jpg",
+  "price": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a87ca46e1c2591076b73e"
+  },
+  "type": "book",
+  "src": "book6.jpg",
+  "price": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a87d746e1c2591076b73f"
+  },
+  "type": "book",
+  "src": "book7.jpg",
+  "price": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a87e246e1c2591076b740"
+  },
+  "type": "book",
+  "src": "book8.jpg",
+  "price": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a87ec46e1c2591076b741"
+  },
+  "type": "book",
+  "src": "book9.jpg",
+  "price": 10,
+  "__v": 0
+}]

@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "60068ffa23e2bd64083c961f"
+  },
+  "admin": 1,
+  "name": "Marijana Veletić",
+  "email": "lalal@gmail.com",
+  "username": "admin",
+  "password": "$2a$10$pYVYOceLfL9UFGU98Qhk/uCCc8Rp1CF9bDsN3Ydan7PBd4OQze7HW",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "600a871446e1c2591076b73b"
+  },
+  "admin": 0,
+  "name": "Aida Sutaj",
+  "email": "aida@gmail.com",
+  "username": "user",
+  "password": "$2a$10$6ETsy/hcefg4QYodah2Tw.udaDC/GHXaBVTJRDcjWKEwrw7d9jdhC",
+  "__v": 0
+}]
