@@ -1,0 +1,64 @@
+<nav class="navbar fixed-top navbar-dark bg-dark navbar-expand-md bg-success text-white">
+    <a class="text-white navbar-brand" href="/">
+        <i class="fas fa-book-open"> AMStore</i>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" 
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto menu">
+            <li class="nav-item active">
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto menu">
+            <form class="form-inline mt-2 mt-md-0">
+                <a href="/cart" class="text-white nav-link">
+                    <i class="text-warning fas fa-shopping-cart"></i>
+                    Shopping Cart <i id="cart_n" style="color:yellow"></i>
+                </a>
+                <div id="navbarCollapse" class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto menu">
+                        <li class="nav-item active">
+                            <a href="/orders" class="nav-link">View Orders</a>
+                        </li>
+                    </ul>
+                </div>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ user.username }} 
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/users/logout" onclick="localStorage.clear()">Logout</a>
+                    </div>
+                </li>
+            </form>
+        </ul>
+    </div>
+</nav>
+<br><br><br>
+<div class="container mt-3">
+    <main role="main">
+        <div class="row">
+            <div class="col">
+                <div class="table-responsive-sm">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table_cart">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+    </main>
+</div>
+<script src="/js/cart.js" defer></script>

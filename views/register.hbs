@@ -1,0 +1,81 @@
+ <nav class="navbar fixed-top navbar-dark bg-dark navbar-expand-md bg-success text-white">
+    <a class="text-white navbar-brand" href="/">
+        <i class="fas fa-book-open"> AMStore</i>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" 
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto menu">
+
+        </ul>
+    </div>
+</nav>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <br><br>
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex">
+             <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign Up</h5>
+
+            <form class="form-signin" method="POST" action="/users/register" onsubmit="return passwordsCheck()">
+          
+              <div class="form-label-group">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Name" required autofocus>
+                <label for="name">Name</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+                <label for="email">Email address</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+                <label for="username">Username</label>
+              </div>
+              
+              <hr>
+
+              <div class="form-label-group">
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required autofocus>
+                <label for="password">Password</label>
+              </div>
+              
+              <div class="form-label-group">
+                <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm password" required autofocus>
+                <label for="password2">Confirm password</label>
+                <em id="cp"></em>
+              </div>
+
+              <hr> <br>
+              <button class="btn btn-lg btn-secondary btn-block text-uppercase" type="submit" value="submit" 
+                    style="background-color: teal;">Register</button>
+              <a class="d-block text-center mt-2 small" href="/users/login">Sign In</a>
+              <hr class="my-4">
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+    function passwordsCheck(){
+        if($("#password").val()!=$("#password2").val()){
+            $("#password2").addClass('is-invalid');
+            $("#cp").html('<span class="text-danger">Password and confirm password do not match!</span>');
+            return false;
+        }
+        return true;
+    }
+</script>
+
+</body>

@@ -1,0 +1,56 @@
+<nav class="navbar fixed-top navbar-dark bg-dark navbar-expand-md bg-success text-white">
+    <a class="text-white navbar-brand" href="/">
+        <i class="fas fa-book-open"> AMStore</i>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" 
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto menu">
+            <li class="nav-item active">
+                <a href="/" class="nav-link">View Products</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br><br><br>
+<div class="container mt-5 mb-3">
+    <div class="row">
+        <div class="col">
+            <form action="/product" class="p-3" method="POST" autocomplete="off" encType="multipart/form-data">
+                <div class="form-group">
+                    <label for="">Type</label>
+                    <select  id="typeDropdown" class="custom-select" name="type" required>
+                        <option value="" selected disabled>Select type...</option>
+                        <option value="book">book</option>
+                        <option value="mug">mug</option>
+                        <option value="notebook">notebook</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Price</label>
+                    <input type="text" class="form-control" value="" name="price" placeholder="10" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Image</label>
+                    <div class="custom-file">
+                        <input id="src" type="file" name="src" class="custom-file-input" required />
+                        <label class="custom-file-label" for="image">Choose file...</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+// Add the following code if you want the name of the file appear on select
+$(".custom-file-input").on("change", function() {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>

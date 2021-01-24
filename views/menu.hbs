@@ -1,0 +1,326 @@
+<header>
+    <nav class="navbar fixed-top navbar-dark bg-dark navbar-expand-md bg-success text-white">
+        <div class="container-fluid">
+            <a class="text-white navbar-brand" href="/">
+                <i class="fas fa-book-open"> AMStore</i>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" 
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto menu">
+                    <li class="nav-item active">
+                        <a href="#book" class="nav-link">Books</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#mug" class="nav-link">Mugs</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#notebook" class="nav-link">Notebooks</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto menu">
+                    {{#if user}}
+                        {{#ifeq user.admin 1}}
+                            <form class="form-inline mt-2 mt-md-0">
+                                <a href="/admin" class="nav-link text-white">
+                                    Admin <i class="far fa-user"></i>
+                                </a>
+                            </form>
+                        {{/ifeq}}
+                        {{#ifeq user.admin 0}}
+                            <form class="form-inline mt-2 mt-md-0">
+                                <a href="/cart" class="text-white nav-link">
+                                    <i class="text-warning fas fa-shopping-cart"></i>
+                                    Shopping Cart <i id="cart_n" style="color:yellow"></i>
+                                </a>
+                            </form>
+                            <div id="navbarCollapse" class="collapse navbar-collapse">
+                                <ul class="navbar-nav mr-auto menu">
+                                    <li class="nav-item active">
+                                        <a href="/orders" class="nav-link">View Orders</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        {{/ifeq}}
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ user.username }} 
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/users/logout" onclick="localStorage.clear()">Logout</a>
+                            </div>
+                        </li>
+                    {{else}}
+                        <li class="nav-item active">
+                            <a href="/users/login" class="nav-link">LogIn</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="/users/register" class="nav-link">Register</a>
+                        </li>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main role="main">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li style="z-index:102;" data-target="#myCarousel" data-slide-to="0"></li>
+            <li style="z-index:102;" data-target="#myCarousel" data-slide-to="1" class="active"></li>
+            <li style="z-index:102;" data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img class="imgFilter first-slide" src="img/carousel/slide1.jpg" alt="First Slide">
+                <div class="container">
+                    <div class="carousel-caption text-right">
+                        <p>“I think we ought to read only the kind of books that wound or stab us. If the book we're 
+                            reading doesn't wake us up with a blow to the head, what are we reading for? So that it will
+                            make us happy, as you write? Good Lord, we would be happy precisely if we had no books, and the 
+                            kind of books that make us happy are the kind we could write ourselves if we had to. 
+                            But we need books that affect us like a disaster, that grieve us deeply, like the death of 
+                            someone we loved more than ourselves, like being banished into forests far from everyone, 
+                            like a suicide. A book must be the axe for the frozen sea within us. That is my belief.”</p>
+                        <br><br>
+                        <p><a href="#book" role="button" class="btn btn-dark btn-lg product-btn">Products</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <img class="imgFilter second-slide" src="img/carousel/slide2.jpg" alt="Second Slide">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <p>“What really knocks me out is a book that, when you're all done reading it, you wish the author 
+                            that wrote it was a terrific friend of yours and you could call him up on the phone whenever you 
+                            felt like it. That doesn't happen much, though.”</p>
+                        <br><br>
+                        <p><a href="#book" role="button" class="btn btn-dark btn-lg product-btn">Products</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="imgFilter third-slide" src="img/carousel/slide3.jpg" alt="Third Slide">
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <p>“Those who find ugly meanings in beautiful things are corrupt without being charming. This is a 
+                            fault. Those who find beautiful meanings in beautiful things are the cultivated. For these there 
+                            is hope. They are the elect to whom beautiful things mean only Beauty. There is no such thing as a 
+                            moral or an immoral book. Books are well written, or badly written. That is all.”</p>
+                        <br><br>
+                        <p><a href="#book" role="button" class="btn btn-dark btn-lg product-btn">Products</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a style="z-index:101;" class="carousel-control-prev" role="button" data-slide="prev" href="#myCarousel">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a style="z-index:101;" class="carousel-control-next" role="button" data-slide="next" href="#myCarousel">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="container marketing">
+        <br>
+        <div id="book"></div>
+        <br><br><br>
+        <h2>Books</h2>
+        <hr>
+        <div id="bookDIV" class="row">
+
+            {{#if user}}
+                {{#each product}}
+                    {{#ifeq this.type 'book' }}
+                        <div class="col-md-3">
+                            <div class="card card-accent-dark text-white bg-dark mb-3 cardShadow">
+                                <img class="card-img-top" style="height: 20rem" src="./img/books/{{this.src}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">Price: {{this.price}}€</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <div class="dropdown">
+                                                <select id="qty{{this._id}}" class="custom-select" data-style="btn-info">
+                                                    <option value="1" selected>1</option>
+                                                    {{#range 2 10}}
+                                                        <option value="{{this}}">{{this}}</option>
+                                                    {{/range}}
+                                                </select>
+                                            </div>
+                                            <button id="btnBook{{this._id}}" type="button" class="btn btn-sm btn-outline-light" 
+                                                onclick="cart('{{this._id}}', '{{this.price}}', '../img/books/{{this.src}}')">
+                                                Add to cart
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/ifeq}}
+                {{/each}}
+            {{else}}
+                {{#each product}}
+                    {{#ifeq this.type 'book' }}
+                        <div class="col-md-3">
+                            <div class="card card-accent-dark text-white bg-dark mb-3 cardShadow">
+                                <img class="card-img-top" style="height: 20rem" src="./img/books/{{this.src}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">Price: {{this.price}}€</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <div class="dropdown">
+                                                <select id="qty{{this._id}}" class="custom-select" data-style="btn-info">
+                                                    <option value="1" selected>1</option>
+                                                    {{#range 2 10}}
+                                                        <option value="{{this}}">{{this}}</option>
+                                                    {{/range}}
+                                                </select>
+                                            </div>
+                                            <a href="/users/login" class="btn btn-sm btn-outline-light">Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/ifeq}}
+                {{/each}}
+            {{/if}}
+
+        </div>
+        <div id="mug"></div>
+        <br><br><br>
+        <h2>Mugs</h2>
+        <hr>
+        <div id="mugDIV" class="row">
+
+            {{#if user}}
+                {{#each product}}
+                    {{#ifeq this.type 'mug' }}
+                        <div class="col-md-3">
+                            <div class="card card-accent-dark text-white bg-dark mb-3 cardShadow">
+                                <img class="card-img-top" style="height: 20rem" src="./img/mugs/{{this.src}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">Price: {{this.price}}€</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <div class="dropdown">
+                                                <select id="qty{{this._id}}" class="custom-select" data-style="btn-info">
+                                                    <option value="1" selected>1</option>
+                                                    {{#range 2 10}}
+                                                        <option value="{{this}}">{{this}}</option>
+                                                    {{/range}}
+                                                </select>
+                                            </div>
+                                            <button id="btnMug{{this._id}}" type="button" class="btn btn-sm btn-outline-light" 
+                                                onclick="cart('{{this._id}}', '{{this.price}}', '../img/mugs/{{this.src}}')">
+                                                Add to cart
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/ifeq}}
+                {{/each}}
+            {{else}}
+                {{#each product}}
+                    {{#ifeq this.type 'mug' }}
+                        <div class="col-md-3">
+                            <div class="card card-accent-dark text-white bg-dark mb-3 cardShadow">
+                                <img class="card-img-top" style="height: 20rem" src="./img/mugs/{{this.src}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">Price: {{this.price}}€</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <div class="dropdown">
+                                                <select id="qty{{this._id}}" class="custom-select" data-style="btn-info">
+                                                    <option value="1" selected>1</option>
+                                                    {{#range 2 10}}
+                                                        <option value="{{this}}">{{this}}</option>
+                                                    {{/range}}
+                                                </select>
+                                            </div>
+                                            <a href="/users/login" class="btn btn-sm btn-outline-light">Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/ifeq}}
+                {{/each}}
+            {{/if}}
+
+        </div>
+        <div id="notebook"></div>
+        <br><br><br>
+        <h2>Notebooks</h2>
+        <hr>
+        <div id="notebookDIV" class="row">
+
+            {{#if user}}
+                {{#each product}}
+                    {{#ifeq this.type 'notebook' }}
+                        <div class="col-md-3">
+                            <div class="card card-accent-dark text-white bg-dark mb-3 cardShadow">
+                                <img class="card-img-top" style="height: 20rem" src="./img/notebooks/{{this.src}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">Price: {{this.price}}€</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <div class="dropdown">
+                                                <select id="qty{{this._id}}" class="custom-select" data-style="btn-info">
+                                                    <option value="1" selected>1</option>
+                                                    {{#range 2 10}}
+                                                        <option value="{{this}}">{{this}}</option>
+                                                    {{/range}}
+                                                </select>
+                                            </div>
+                                            <button id="btnNoteook{{this._id}}" type="button" class="btn btn-sm btn-outline-light" 
+                                                onclick="cart('{{this._id}}', '{{this.price}}', '../img/notebooks/{{this.src}}')">
+                                                Add to cart
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/ifeq}}
+                {{/each}}
+            {{else}}
+                {{#each product}}
+                    {{#ifeq this.type 'notebook' }}
+                        <div class="col-md-3">
+                            <div class="card card-accent-dark text-white bg-dark mb-3 cardShadow">
+                                <img class="card-img-top" style="height: 20rem" src="./img/notebooks/{{this.src}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">Price: {{this.price}}€</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <div class="dropdown">
+                                                <select id="qty{{this._id}}" class="custom-select" data-style="btn-info">
+                                                    <option value="1" selected>1</option>
+                                                    {{#range 2 10}}
+                                                        <option value="{{this}}">{{this}}</option>
+                                                    {{/range}}
+                                                </select>
+                                            </div>
+                                            <a href="/users/login" class="btn btn-sm btn-outline-light">Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/ifeq}}
+                {{/each}}
+            {{/if}}
+
+        </div>
+        <hr class="featurette-divider">
+    </div>
+</main>
+<script src="/js/main.js" defer></script>

@@ -1,0 +1,17 @@
+.body {
+    margin:0;
+    font-family:Nunito,sans-serif;
+    font-size:.9rem;font-weight:400;
+    line-height:1.6;color:#212529;
+    text-align:left;
+    text-align:left; 
+    background: rgb(237, 108, 104);
+    background: linear-gradient(180deg, rgb(223, 206, 151), rgb(192, 152, 115) 40%, rgb(177, 112, 70) 100%) no-repeat center center fixed;
+}
+.imgFilter {
+    filter: brightness(0.50);
+}
+
+.cardShadow {
+  box-shadow: 0 12px 17px #0000008f !important;
+}
